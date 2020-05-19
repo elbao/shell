@@ -5,7 +5,7 @@ if [[ ! -f $file_name ]]; then
   yum install wget -y
   wget https://github.com/ginuerzh/gost/releases/download/v2.11.0/gost-linux-amd64-2.11.0.gz
 fi
-gzip -d gost-linux-amd64-2.11.0.gz && mv gost* gost && chmod +x gost
+gzip -d gost-linux-amd64-2.11.0.gz && mv gost-linux-amd64-2.11.0 gost && chmod +x gost
 echo "gost安装成功"
 read -p "请输入要中转的服务器IP:" dest
 read -p "请输入要转发的起始端口号:" start_port
