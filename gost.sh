@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 echo "本脚本仅供学习交流，请勿用于其他用途，否则后果自负"
 
-yum install wget -y
-wget https://github.com/ginuerzh/gost/releases/download/v2.11.0/gost-linux-amd64-2.11.0.gz
-gzip -d gost-linux-amd64-2.11.0.gz && mv gost-linux-amd64-2.11.0 gost && chmod +x gost
+file_name=gost-linux-amd64-2.11.0.gz
+if [[ ! -f $file_name ]]; then
+  yum install wget -y
+  wget https://github.com/ginuerzh/gost/releases/download/v2.11.0/gost-linux-amd64-2.11.0.gz
+fi
+gzip -d gost-linux-amd64-2.11.0.gz && mv gost* gost && chmod +x gost
 echo "gost安装成功"
 
 read -p "请输入要中转的服务器IP:" dest
